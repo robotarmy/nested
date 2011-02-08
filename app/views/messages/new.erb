@@ -3,4 +3,5 @@
   <%= m.fields_for Identity.new do |i| %>
     <%= i.text_area :public_key %>
   <%- end %>
+  <%= m.submit :send %>
 <%-end %>
