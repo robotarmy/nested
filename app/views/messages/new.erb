@@ -1,6 +1,7 @@
-<%= form_for Message.new  do |m| %>
+<%= message = Message.new %>
+<%= form_for message  do |m| %>
   <%= m.text_area :body %>
-  <%= m.fields_for Identity.new do |i| %>
+  <%= m.fields_for :identity, message.build_identity do |i| %>
     <%= i.text_area :public_key %>
   <%- end %>
   <%= m.submit :send %>
